@@ -10,7 +10,7 @@ interface Props {
 const CodeEditor: React.FC<Props> = ({ code, language, onChange }) => {
   return (
     <Editor
-      height="400px"
+      height="250px"
       defaultLanguage={language}
       language={language}
       defaultValue={code}

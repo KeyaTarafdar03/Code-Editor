@@ -41,9 +41,9 @@ export const runCode = async ({
       break;
 
     case "java":
-      filePath = path.join(tempDir, `${tempId}.java`);
+      filePath = path.join(tempDir, `Main.java`);
       await fs.writeFile(filePath, code);
-      command = `javac ${filePath} && java -cp ${tempDir} ${tempId}`;
+      command = `javac ${filePath} && java -cp ${tempDir} Main`;
       break;
 
     default:
@@ -66,7 +66,7 @@ export const runCode = async ({
             await fs.unlink(path.join(tempDir, tempId));
           }
           if (language === "java") {
-            await fs.unlink(path.join(tempDir, `${tempId}.class`));
+            await fs.unlink(path.join(tempDir, `Main.class`));
           }
         } catch (cleanupErr) {
           console.error("Cleanup error:", cleanupErr);

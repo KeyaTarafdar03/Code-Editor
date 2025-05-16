@@ -4,8 +4,7 @@
   "description": "Backend server to execute code via Node.js",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node src/server.ts",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "nodemon src/server.ts",
     "build": "tsc"
   },
   "keywords": [],
